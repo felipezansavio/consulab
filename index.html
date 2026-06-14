@@ -3,639 +3,554 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ConsuLab Odontologia em Itapema SC — cuidado dental de excelência com tecnologia moderna e equipe especializada. Agende sua consulta." />
+  <meta name="description" content="ConsuLab Odontologia - Cuidado odontológico de excelência em Itapema, SC. Clareamento, implantes, ortodontia e muito mais." />
   <title>ConsuLab Odontologia | Itapema, SC</title>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ========== NAVBAR ========== -->
+  <!-- ===== NAVBAR ===== -->
   <header class="navbar" id="navbar">
     <div class="container navbar__inner">
       <a href="#inicio" class="navbar__logo">
-        <span class="logo-icon"><i class="fa-solid fa-tooth"></i></span>
-        <span class="logo-text">ConsuLab <strong>Odontologia</strong></span>
+        <i class="fas fa-tooth navbar__logo-icon"></i>
+        <span>ConsuLab <strong>Odontologia</strong></span>
       </a>
 
-      <nav class="navbar__nav" id="navMenu">
-        <ul class="nav-list">
-          <li><a href="#inicio" class="nav-link active">Início</a></li>
-          <li><a href="#sobre" class="nav-link">Sobre</a></li>
-          <li><a href="#servicos" class="nav-link">Serviços</a></li>
-          <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
-          <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
-          <li><a href="#contato" class="nav-link">Contato</a></li>
-        </ul>
-      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
 
-      <div class="navbar__actions">
-        <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia." target="_blank" rel="noopener" class="btn btn--whatsapp navbar__cta">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#inicio"       class="nav__link" data-section="inicio">Início</a></li>
+          <li><a href="#sobre"        class="nav__link" data-section="sobre">Sobre</a></li>
+          <li><a href="#servicos"     class="nav__link" data-section="servicos">Serviços</a></li>
+          <li><a href="#diferenciais" class="nav__link" data-section="diferenciais">Diferenciais</a></li>
+          <li><a href="#depoimentos"  class="nav__link" data-section="depoimentos">Depoimentos</a></li>
+          <li><a href="#contato"      class="nav__link" data-section="contato">Contato</a></li>
+        </ul>
+        <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia." target="_blank" rel="noopener" class="btn btn--whatsapp-nav">
+          <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
-        <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      </nav>
     </div>
   </header>
 
-  <!-- ========== HERO ========== -->
+  <!-- ===== HERO ===== -->
   <section class="hero" id="inicio">
-    <div class="hero__bg"></div>
-    <div class="hero__pattern"></div>
+    <div class="hero__pattern" aria-hidden="true">
+      <svg class="hero__svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="60"  fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+        <circle cx="100" cy="100" r="110" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+        <circle cx="700" cy="500" r="80"  fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+        <circle cx="700" cy="500" r="140" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="2"/>
+        <circle cx="400" cy="300" r="200" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.5"/>
+        <path d="M50,400 Q200,300 350,400 T650,350"  fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
+        <path d="M0,200  Q150,100 300,200 T600,150" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+        <rect x="600" y="50"  width="80" height="80" rx="16" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="2" transform="rotate(20,640,90)"/>
+        <rect x="30"  y="450" width="60" height="60" rx="12" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="2" transform="rotate(-15,60,480)"/>
+        <polygon points="750,100 775,150 725,150" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="2"/>
+        <polygon points="200,500 230,560 170,560" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
+      </svg>
+    </div>
+
     <div class="container hero__content">
-      <span class="hero__badge animate-fade-up"><i class="fa-solid fa-star"></i> Referência em Odontologia em Itapema, SC</span>
-      <h1 class="hero__title animate-fade-up">Seu sorriso é<br /><span class="text-accent">nossa especialidade</span></h1>
-      <p class="hero__subtitle animate-fade-up">Cuidado dental de excelência com tecnologia de ponta e uma equipe altamente especializada. Na ConsuLab Odontologia, cada sorriso recebe atenção personalizada e tratamentos modernos para sua saúde e bem-estar.</p>
-      <div class="hero__actions animate-fade-up">
-        <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia." target="_blank" rel="noopener" class="btn btn--primary btn--lg">
-          <i class="fa-solid fa-calendar-check"></i> Agende sua consulta
+      <span class="hero__badge animate-on-scroll">
+        <i class="fas fa-map-marker-alt"></i> Itapema, Santa Catarina
+      </span>
+      <h1 class="hero__title animate-on-scroll">
+        Seu sorriso é<br /><span class="hero__title--accent">nossa especialidade</span>
+      </h1>
+      <p class="hero__subtitle animate-on-scroll">
+        Cuidado odontológico de excelência em Itapema, SC.<br />
+        Agende sua consulta e transforme seu sorriso com profissionais especializados.
+      </p>
+      <div class="hero__actions animate-on-scroll">
+        <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia."
+           target="_blank" rel="noopener" class="btn btn--primary btn--lg">
+          <i class="fab fa-whatsapp"></i> Agende sua consulta
         </a>
         <a href="#servicos" class="btn btn--outline btn--lg">
-          <i class="fa-solid fa-circle-play"></i> Nossos Serviços
+          <i class="fas fa-list"></i> Nossos Serviços
         </a>
       </div>
-      <div class="hero__trust animate-fade-up">
-        <div class="trust-item"><i class="fa-solid fa-shield-halved"></i> <span>Clínica Certificada</span></div>
-        <div class="trust-item"><i class="fa-solid fa-user-doctor"></i> <span>Especialistas CRO/SC</span></div>
-        <div class="trust-item"><i class="fa-solid fa-heart-pulse"></i> <span>Atendimento Humanizado</span></div>
+      <div class="hero__trust animate-on-scroll">
+        <div class="hero__trust-item"><i class="fas fa-star"></i><span>500+ Pacientes</span></div>
+        <div class="hero__trust-item"><i class="fas fa-award"></i><span>10+ Anos</span></div>
+        <div class="hero__trust-item"><i class="fas fa-thumbs-up"></i><span>95% Satisfação</span></div>
       </div>
     </div>
-    <div class="hero__scroll-indicator">
+
+    <a href="#sobre" class="hero__scroll-indicator" aria-label="Rolar para baixo">
       <span></span>
-    </div>
+    </a>
   </section>
 
-  <!-- ========== SOBRE ========== -->
+  <!-- ===== SOBRE NÓS ===== -->
   <section class="section sobre" id="sobre">
     <div class="container">
+      <div class="section__header animate-on-scroll">
+        <span class="section__tag">Quem Somos</span>
+        <h2 class="section__title">Sobre a ConsuLab Odontologia</h2>
+        <p class="section__subtitle">
+          Somos uma clínica odontológica moderna em Itapema, SC, comprometida com o bem-estar e a saúde bucal de cada paciente.
+          Nossa missão é proporcionar tratamentos de alta qualidade em um ambiente acolhedor e confortável, utilizando tecnologia
+          de ponta e uma equipe altamente qualificada para transformar o seu sorriso.
+        </p>
+      </div>
+
       <div class="sobre__grid">
-        <div class="sobre__visual animate-on-scroll">
-          <div class="sobre__image-wrapper">
-            <div class="sobre__image-card sobre__image-card--main">
-              <i class="fa-solid fa-tooth"></i>
-              <p>Excelência em Odontologia</p>
-            </div>
-            <div class="sobre__image-card sobre__image-card--accent">
-              <i class="fa-solid fa-award"></i>
-              <p>+10 anos de experiência</p>
-            </div>
-            <div class="sobre__badge-float">
-              <i class="fa-solid fa-star"></i>
-              <span>Avaliação 5 estrelas</span>
-            </div>
+        <div class="sobre__card animate-on-scroll">
+          <div class="sobre__card-icon sobre__card-icon--red">
+            <i class="fas fa-heart"></i>
           </div>
+          <h3>Missão</h3>
+          <p>Transformar sorrisos com excelência, cuidado e humanização, promovendo saúde bucal e bem-estar para toda a família.</p>
         </div>
-
-        <div class="sobre__content animate-on-scroll">
-          <span class="section-label">Quem somos</span>
-          <h2 class="section-title">Cuidamos do seu sorriso com <span class="text-primary">dedicação e tecnologia</span></h2>
-          <p class="sobre__desc">A <strong>ConsuLab Odontologia</strong> é uma clínica odontológica localizada em Itapema, SC, comprometida com a saúde bucal e o bem-estar dos nossos pacientes. Com uma equipe de cirurgiões-dentistas especialistas e equipamentos de última geração, oferecemos atendimento completo e personalizado.</p>
-          <p class="sobre__desc">Nosso ambiente foi projetado para proporcionar conforto e tranquilidade, tornando cada visita uma experiência agradável. Acreditamos que um sorriso saudável transforma vidas.</p>
-
-          <div class="sobre__values">
-            <div class="value-card">
-              <div class="value-card__icon"><i class="fa-solid fa-bullseye"></i></div>
-              <div>
-                <h4>Missão</h4>
-                <p>Promover saúde bucal com excelência, tecnologia e humanização.</p>
-              </div>
-            </div>
-            <div class="value-card">
-              <div class="value-card__icon"><i class="fa-solid fa-eye"></i></div>
-              <div>
-                <h4>Visão</h4>
-                <p>Ser referência em odontologia em Santa Catarina.</p>
-              </div>
-            </div>
-            <div class="value-card">
-              <div class="value-card__icon"><i class="fa-solid fa-heart"></i></div>
-              <div>
-                <h4>Valores</h4>
-                <p>Ética, comprometimento, inovação e cuidado com o paciente.</p>
-              </div>
-            </div>
+        <div class="sobre__card animate-on-scroll">
+          <div class="sobre__card-icon sobre__card-icon--yellow">
+            <i class="fas fa-star"></i>
           </div>
+          <h3>Visão</h3>
+          <p>Ser referência em odontologia na região de Itapema, reconhecida pela qualidade, inovação e satisfação dos nossos pacientes.</p>
+        </div>
+        <div class="sobre__card animate-on-scroll">
+          <div class="sobre__card-icon sobre__card-icon--green">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Valores</h3>
+          <p>Ética, responsabilidade, comprometimento com resultados e respeito à individualidade de cada paciente que nos procura.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== SERVIÇOS ========== -->
+  <!-- ===== SERVIÇOS ===== -->
   <section class="section servicos" id="servicos">
     <div class="container">
-      <div class="section-header animate-on-scroll">
-        <span class="section-label">O que oferecemos</span>
-        <h2 class="section-title">Nossos <span class="text-primary">Serviços</span></h2>
-        <p class="section-subtitle">Tratamentos odontológicos completos com tecnologia avançada para cuidar do seu sorriso em todas as etapas da vida.</p>
+      <div class="section__header animate-on-scroll">
+        <span class="section__tag">O Que Fazemos</span>
+        <h2 class="section__title">Nossos Serviços</h2>
+        <p class="section__subtitle">Oferecemos uma ampla gama de tratamentos odontológicos para cuidar do seu sorriso com toda a atenção que você merece.</p>
       </div>
 
       <div class="servicos__grid">
 
-        <div class="service-card animate-on-scroll">
-          <div class="service-card__icon">
-            <i class="fa-solid fa-sun"></i>
-          </div>
-          <h3>Clareamento Dental</h3>
-          <p>Recupere o brilho natural do seu sorriso com técnicas modernas de clareamento dental seguro e eficaz.</p>
-          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Clareamento%20Dental." target="_blank" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+        <article class="servico-card animate-on-scroll">
+          <div class="servico-card__icon"><i class="fas fa-smile"></i></div>
+          <h3 class="servico-card__title">Clareamento Dental</h3>
+          <p class="servico-card__desc">Recupere o brilho do seu sorriso com nosso clareamento dental seguro, rápido e eficaz, com resultados visíveis desde a primeira sessão.</p>
+          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Clareamento%20Dental." target="_blank" rel="noopener" class="servico-card__link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+        </article>
 
-        <div class="service-card animate-on-scroll">
-          <div class="service-card__icon">
-            <i class="fa-solid fa-tooth"></i>
-          </div>
-          <h3>Implantes Dentários</h3>
-          <p>Reponha dentes perdidos com implantes de titânio de alta qualidade, restaurando função e estética.</p>
-          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Implantes." target="_blank" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+        <article class="servico-card animate-on-scroll">
+          <div class="servico-card__icon"><i class="fas fa-tooth"></i></div>
+          <h3 class="servico-card__title">Implantes</h3>
+          <p class="servico-card__desc">Reponha dentes perdidos com implantes de titânio de alta durabilidade. Resultado natural, funcional e permanente para sua qualidade de vida.</p>
+          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Implantes." target="_blank" rel="noopener" class="servico-card__link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+        </article>
 
-        <div class="service-card animate-on-scroll">
-          <div class="service-card__icon">
-            <i class="fa-solid fa-align-center"></i>
-          </div>
-          <h3>Ortodontia / Aparelho</h3>
-          <p>Corrija o alinhamento dos seus dentes com aparelhos fixos, móveis ou invisíveis modernos.</p>
-          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Ortodontia." target="_blank" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+        <article class="servico-card animate-on-scroll">
+          <div class="servico-card__icon"><i class="fas fa-align-center"></i></div>
+          <h3 class="servico-card__title">Ortodontia / Aparelho</h3>
+          <p class="servico-card__desc">Alinhe seus dentes com aparelhos metálicos, estéticos ou invisíveis (alinhadores). Sorrisos corrigidos com planejamento personalizado.</p>
+          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Ortodontia." target="_blank" rel="noopener" class="servico-card__link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+        </article>
 
-        <div class="service-card animate-on-scroll">
-          <div class="service-card__icon">
-            <i class="fa-solid fa-star-of-life"></i>
-          </div>
-          <h3>Dentística</h3>
-          <p>Restaurações, facetas e procedimentos estéticos para um sorriso perfeito e natural.</p>
-          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Dentística." target="_blank" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+        <article class="servico-card animate-on-scroll">
+          <div class="servico-card__icon"><i class="fas fa-magic"></i></div>
+          <h3 class="servico-card__title">Dentística</h3>
+          <p class="servico-card__desc">Restaurações estéticas em resina composta, lentes de contato dental e facetas para um sorriso perfeito e harmonioso.</p>
+          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Dent%C3%ADstica." target="_blank" rel="noopener" class="servico-card__link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+        </article>
 
-        <div class="service-card animate-on-scroll">
-          <div class="service-card__icon">
-            <i class="fa-solid fa-shield-virus"></i>
-          </div>
-          <h3>Periodontia</h3>
-          <p>Tratamento e prevenção de doenças das gengivas para uma saúde bucal completa e duradoura.</p>
-          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Periodontia." target="_blank" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+        <article class="servico-card animate-on-scroll">
+          <div class="servico-card__icon"><i class="fas fa-leaf"></i></div>
+          <h3 class="servico-card__title">Periodontia</h3>
+          <p class="servico-card__desc">Tratamento especializado da gengiva e estruturas de suporte dos dentes. Prevenção e tratamento de gengivites e periodontites.</p>
+          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Periodontia." target="_blank" rel="noopener" class="servico-card__link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+        </article>
 
-        <div class="service-card animate-on-scroll">
-          <div class="service-card__icon">
-            <i class="fa-solid fa-teeth"></i>
-          </div>
-          <h3>Prótese Dentária</h3>
-          <p>Soluções protéticas fixas e removíveis para reabilitar sua mastigação, fala e estética.</p>
-          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Prótese%20Dentária." target="_blank" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+        <article class="servico-card animate-on-scroll">
+          <div class="servico-card__icon"><i class="fas fa-cogs"></i></div>
+          <h3 class="servico-card__title">Prótese Dentária</h3>
+          <p class="servico-card__desc">Próteses fixas, removíveis e sobre implantes para reabilitar sua mastigação, fala e estética com conforto e precisão.</p>
+          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Pr%C3%B3tese%20Dent%C3%A1ria." target="_blank" rel="noopener" class="servico-card__link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+        </article>
 
-        <div class="service-card animate-on-scroll">
-          <div class="service-card__icon">
-            <i class="fa-solid fa-syringe"></i>
-          </div>
-          <h3>Endodontia</h3>
-          <p>Tratamento de canal com técnicas modernas para salvar seus dentes com máximo conforto.</p>
-          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Endodontia." target="_blank" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+        <article class="servico-card animate-on-scroll">
+          <div class="servico-card__icon"><i class="fas fa-syringe"></i></div>
+          <h3 class="servico-card__title">Endodontia</h3>
+          <p class="servico-card__desc">Tratamento de canal com técnica moderna e anestesia eficaz. Salve seu dente natural com segurança e sem dor.</p>
+          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Endodontia." target="_blank" rel="noopener" class="servico-card__link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+        </article>
 
-        <div class="service-card animate-on-scroll">
-          <div class="service-card__icon">
-            <i class="fa-solid fa-child-reaching"></i>
-          </div>
-          <h3>Odontopediatria</h3>
-          <p>Atendimento especializado e lúdico para crianças, criando hábitos saudáveis desde cedo.</p>
-          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Odontopediatria." target="_blank" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+        <article class="servico-card animate-on-scroll">
+          <div class="servico-card__icon"><i class="fas fa-baby"></i></div>
+          <h3 class="servico-card__title">Odontopediatria</h3>
+          <p class="servico-card__desc">Cuidado odontológico especializado para crianças em um ambiente lúdico e acolhedor, tornando cada visita uma experiência positiva.</p>
+          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Odontopediatria." target="_blank" rel="noopener" class="servico-card__link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+        </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ========== STATS ========== -->
-  <section class="section stats" id="stats">
-    <div class="container">
-      <div class="stats__grid">
-        <div class="stat-item animate-on-scroll">
-          <div class="stat-item__icon"><i class="fa-solid fa-users"></i></div>
-          <div class="stat-item__number"><span class="counter" data-target="500">0</span>+</div>
-          <div class="stat-item__label">Pacientes Atendidos</div>
-        </div>
-        <div class="stat-item animate-on-scroll">
-          <div class="stat-item__icon"><i class="fa-solid fa-calendar-days"></i></div>
-          <div class="stat-item__number"><span class="counter" data-target="10">0</span>+</div>
-          <div class="stat-item__label">Anos de Experiência</div>
-        </div>
-        <div class="stat-item animate-on-scroll">
-          <div class="stat-item__icon"><i class="fa-solid fa-face-smile"></i></div>
-          <div class="stat-item__number"><span class="counter" data-target="95">0</span>%</div>
-          <div class="stat-item__label">Índice de Satisfação</div>
-        </div>
-        <div class="stat-item animate-on-scroll">
-          <div class="stat-item__icon"><i class="fa-solid fa-stethoscope"></i></div>
-          <div class="stat-item__number"><span class="counter" data-target="8">0</span></div>
-          <div class="stat-item__label">Especialidades</div>
-        </div>
+  <!-- ===== STATS ===== -->
+  <section class="stats" id="stats">
+    <div class="container stats__grid">
+      <div class="stat-item animate-on-scroll">
+        <div class="stat-item__icon"><i class="fas fa-users"></i></div>
+        <div class="stat-item__number"><span class="counter" data-target="500">0</span>+</div>
+        <div class="stat-item__label">Pacientes Atendidos</div>
+      </div>
+      <div class="stat-item animate-on-scroll">
+        <div class="stat-item__icon"><i class="fas fa-calendar-alt"></i></div>
+        <div class="stat-item__number"><span class="counter" data-target="10">0</span>+</div>
+        <div class="stat-item__label">Anos de Experiência</div>
+      </div>
+      <div class="stat-item animate-on-scroll">
+        <div class="stat-item__icon"><i class="fas fa-thumbs-up"></i></div>
+        <div class="stat-item__number"><span class="counter" data-target="95">0</span>%</div>
+        <div class="stat-item__label">Índice de Satisfação</div>
+      </div>
+      <div class="stat-item animate-on-scroll">
+        <div class="stat-item__icon"><i class="fas fa-teeth"></i></div>
+        <div class="stat-item__number"><span class="counter" data-target="8">0</span></div>
+        <div class="stat-item__label">Especialidades</div>
       </div>
     </div>
   </section>
 
-  <!-- ========== DIFERENCIAIS ========== -->
+  <!-- ===== DIFERENCIAIS ===== -->
   <section class="section diferenciais" id="diferenciais">
     <div class="container">
-      <div class="section-header animate-on-scroll">
-        <span class="section-label">Por que nos escolher</span>
-        <h2 class="section-title">Nossos <span class="text-primary">Diferenciais</span></h2>
-        <p class="section-subtitle">Comprometidos com a sua saúde e bem-estar, oferecemos uma experiência odontológica única e de alta qualidade.</p>
+      <div class="section__header animate-on-scroll">
+        <span class="section__tag">Por Que Nos Escolher</span>
+        <h2 class="section__title">Nossos Diferenciais</h2>
+        <p class="section__subtitle">Conheça o que torna a ConsuLab Odontologia a escolha certa para você e sua família.</p>
       </div>
 
       <div class="diferenciais__grid">
-
         <div class="diferencial-card animate-on-scroll">
-          <div class="diferencial-card__icon">
-            <i class="fa-solid fa-microscope"></i>
-          </div>
-          <h3>Equipamentos Modernos</h3>
-          <p>Utilizamos tecnologia de última geração — desde diagnóstico digital por imagem até equipamentos de última linha para todos os tratamentos, garantindo precisão e segurança.</p>
-          <ul class="diferencial-list">
-            <li><i class="fa-solid fa-check"></i> Radiografia digital</li>
-            <li><i class="fa-solid fa-check"></i> Laser odontológico</li>
-            <li><i class="fa-solid fa-check"></i> Equipamentos esterilizados</li>
-          </ul>
+          <div class="diferencial-card__icon"><i class="fas fa-microscope"></i></div>
+          <h3 class="diferencial-card__title">Equipamentos Modernos</h3>
+          <p class="diferencial-card__desc">Contamos com tecnologia de última geração para diagnósticos precisos e tratamentos mais eficazes e confortáveis para nossos pacientes.</p>
         </div>
-
         <div class="diferencial-card animate-on-scroll">
-          <div class="diferencial-card__icon">
-            <i class="fa-solid fa-user-doctor"></i>
-          </div>
-          <h3>Equipe Especializada</h3>
-          <p>Nossa equipe é formada por profissionais altamente qualificados, com especializações nas mais diversas áreas da odontologia e atualização constante.</p>
-          <ul class="diferencial-list">
-            <li><i class="fa-solid fa-check"></i> Especialistas CRO/SC</li>
-            <li><i class="fa-solid fa-check"></i> Atualização contínua</li>
-            <li><i class="fa-solid fa-check"></i> Atendimento humanizado</li>
-          </ul>
+          <div class="diferencial-card__icon"><i class="fas fa-user-md"></i></div>
+          <h3 class="diferencial-card__title">Equipe Especializada</h3>
+          <p class="diferencial-card__desc">Profissionais altamente qualificados e em constante atualização, prontos para oferecer o melhor tratamento para cada caso.</p>
         </div>
-
         <div class="diferencial-card animate-on-scroll">
-          <div class="diferencial-card__icon">
-            <i class="fa-solid fa-couch"></i>
-          </div>
-          <h3>Ambiente Confortável</h3>
-          <p>Nossa clínica foi projetada para proporcionar conforto e tranquilidade. Ambientes aconchegantes, música relaxante e uma equipe simpática fazem toda a diferença.</p>
-          <ul class="diferencial-list">
-            <li><i class="fa-solid fa-check"></i> Ambiente climatizado</li>
-            <li><i class="fa-solid fa-check"></i> Sala de espera confortável</li>
-            <li><i class="fa-solid fa-check"></i> Wi-Fi gratuito</li>
-          </ul>
+          <div class="diferencial-card__icon"><i class="fas fa-couch"></i></div>
+          <h3 class="diferencial-card__title">Ambiente Confortável</h3>
+          <p class="diferencial-card__desc">Nossa clínica foi projetada para proporcionar conforto e tranquilidade, tornando cada visita uma experiência agradável.</p>
         </div>
-
         <div class="diferencial-card animate-on-scroll">
-          <div class="diferencial-card__icon">
-            <i class="fa-solid fa-clock"></i>
-          </div>
-          <h3>Horários Flexíveis</h3>
-          <p>Sabemos que sua rotina é corrida. Por isso, oferecemos horários flexíveis de atendimento, incluindo opções no período da noite e aos sábados.</p>
-          <ul class="diferencial-list">
-            <li><i class="fa-solid fa-check"></i> Seg a Sex: 8h às 20h</li>
-            <li><i class="fa-solid fa-check"></i> Sábados: 8h às 14h</li>
-            <li><i class="fa-solid fa-check"></i> Agendamento online</li>
-          </ul>
+          <div class="diferencial-card__icon"><i class="fas fa-clock"></i></div>
+          <h3 class="diferencial-card__title">Horários Flexíveis</h3>
+          <p class="diferencial-card__desc">Atendemos de segunda a sábado com horários que se adaptam à sua rotina, porque sua saúde não pode esperar.</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ========== DEPOIMENTOS ========== -->
+  <!-- ===== DEPOIMENTOS ===== -->
   <section class="section depoimentos" id="depoimentos">
     <div class="container">
-      <div class="section-header animate-on-scroll">
-        <span class="section-label">O que dizem nossos pacientes</span>
-        <h2 class="section-title">Depoimentos</h2>
-        <p class="section-subtitle">A satisfação dos nossos pacientes é o nosso maior prêmio. Veja o que eles dizem sobre nós.</p>
+      <div class="section__header animate-on-scroll">
+        <span class="section__tag">O Que Dizem</span>
+        <h2 class="section__title">Depoimentos dos Pacientes</h2>
+        <p class="section__subtitle">A opinião de quem já transformou o sorriso com a ConsuLab Odontologia.</p>
       </div>
 
-      <div class="testimonials-wrapper animate-on-scroll">
-        <div class="testimonials-slider" id="testimonialsSlider">
+      <div class="testimonials animate-on-scroll" id="testimonialsContainer">
+        <div class="testimonials__track" id="testimonialsTrack">
 
-          <div class="testimonial-slide active">
-            <div class="testimonial-card">
-              <div class="testimonial-card__quote"><i class="fa-solid fa-quote-left"></i></div>
-              <div class="testimonial-card__stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p class="testimonial-card__text">"Fui à ConsuLab para fazer um implante dentário e fiquei encantada com o atendimento. A Dra. foi extremamente atenciosa, explicou todo o procedimento e não senti nenhuma dor. O resultado ficou perfeito! Indico para toda a família."</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">
-                  <i class="fa-solid fa-user"></i>
-                </div>
-                <div>
-                  <strong>Ana Paula Rodrigues</strong>
-                  <span>Paciente — Implante Dentário</span>
-                </div>
+          <div class="testimonial-card" data-slide="0">
+            <div class="testimonial-card__quote" aria-hidden="true">&ldquo;</div>
+            <div class="testimonial-card__stars" aria-label="5 estrelas">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-card__text">Excelente atendimento! Fiz meu clareamento e ficou perfeito. Recomendo demais! A equipe é muito atenciosa e o resultado superou minhas expectativas.</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">MS</div>
+              <div class="testimonial-card__info">
+                <strong>Maria S.</strong>
+                <span>Paciente — Clareamento Dental</span>
               </div>
             </div>
           </div>
 
-          <div class="testimonial-slide">
-            <div class="testimonial-card">
-              <div class="testimonial-card__quote"><i class="fa-solid fa-quote-left"></i></div>
-              <div class="testimonial-card__stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p class="testimonial-card__text">"Levei meu filho de 6 anos para uma consulta de odontopediatria e me surpreendi com o cuidado e carinho da equipe. Ele adorou! A clínica é linda, muito bem estruturada e os profissionais são excelentes. Com certeza voltaremos sempre."</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">
-                  <i class="fa-solid fa-user"></i>
-                </div>
-                <div>
-                  <strong>Carlos Eduardo Silva</strong>
-                  <span>Paciente — Odontopediatria</span>
-                </div>
+          <div class="testimonial-card" data-slide="1">
+            <div class="testimonial-card__quote" aria-hidden="true">&ldquo;</div>
+            <div class="testimonial-card__stars" aria-label="5 estrelas">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-card__text">Equipe muito atenciosa e profissional. Me senti à vontade desde o primeiro momento. O tratamento foi tranquilo e o resultado ficou incrível!</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar testimonial-card__avatar--blue" aria-hidden="true">JP</div>
+              <div class="testimonial-card__info">
+                <strong>João P.</strong>
+                <span>Paciente — Implante Dentário</span>
               </div>
             </div>
           </div>
 
-          <div class="testimonial-slide">
-            <div class="testimonial-card">
-              <div class="testimonial-card__quote"><i class="fa-solid fa-quote-left"></i></div>
-              <div class="testimonial-card__stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p class="testimonial-card__text">"Fiz o clareamento dental na ConsuLab e o resultado foi incrível! Meus dentes ficaram vários tons mais brancos e o processo foi totalmente sem dor. Atendimento nota 10, ambiente super agradável. Recomendo demais para quem quer um sorriso bonito!"</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">
-                  <i class="fa-solid fa-user"></i>
-                </div>
-                <div>
-                  <strong>Fernanda Costa Alves</strong>
-                  <span>Paciente — Clareamento Dental</span>
-                </div>
+          <div class="testimonial-card" data-slide="2">
+            <div class="testimonial-card__quote" aria-hidden="true">&ldquo;</div>
+            <div class="testimonial-card__stars" aria-label="5 estrelas">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-card__text">Ótima clínica! Meu filho adora ir ao dentista agora graças ao carinho da equipe. As crianças são recebidas com muito cuidado e atenção.</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar testimonial-card__avatar--green" aria-hidden="true">AL</div>
+              <div class="testimonial-card__info">
+                <strong>Ana L.</strong>
+                <span>Mãe de paciente — Odontopediatria</span>
               </div>
             </div>
           </div>
 
         </div>
 
-        <div class="testimonials-controls">
-          <button class="testimonials-btn" id="prevBtn" aria-label="Depoimento anterior">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <div class="testimonials-dots" id="testimonialsDots">
-            <span class="dot active" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-            <span class="dot" data-index="2"></span>
-          </div>
-          <button class="testimonials-btn" id="nextBtn" aria-label="Próximo depoimento">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
+        <button class="testimonials__btn testimonials__btn--prev" id="prevBtn" aria-label="Depoimento anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="testimonials__btn testimonials__btn--next" id="nextBtn" aria-label="Próximo depoimento">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="testimonials__dots" id="testimonialsDots" role="tablist" aria-label="Navegação de depoimentos">
+          <button class="testimonials__dot active" data-index="0" role="tab" aria-selected="true"  aria-label="Depoimento 1"></button>
+          <button class="testimonials__dot"        data-index="1" role="tab" aria-selected="false" aria-label="Depoimento 2"></button>
+          <button class="testimonials__dot"        data-index="2" role="tab" aria-selected="false" aria-label="Depoimento 3"></button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== LOCALIZAÇÃO ========== -->
+  <!-- ===== LOCALIZAÇÃO ===== -->
   <section class="section localizacao" id="localizacao">
     <div class="container">
-      <div class="section-header animate-on-scroll">
-        <span class="section-label">Onde estamos</span>
-        <h2 class="section-title">Localização & <span class="text-primary">Horários</span></h2>
-        <p class="section-subtitle">Venha nos visitar! Estamos localizados em Itapema, SC, com fácil acesso e estacionamento.</p>
+      <div class="section__header animate-on-scroll">
+        <span class="section__tag">Onde Estamos</span>
+        <h2 class="section__title">Nossa Localização</h2>
+        <p class="section__subtitle">Venha nos visitar! Estamos no coração de Itapema, SC, prontos para atendê-lo com todo o cuidado que você merece.</p>
       </div>
 
       <div class="localizacao__grid">
         <div class="localizacao__info animate-on-scroll">
 
-          <div class="info-card">
-            <div class="info-card__icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="localizacao__info-item">
+            <div class="localizacao__info-icon"><i class="fas fa-map-marker-alt"></i></div>
             <div>
               <h4>Endereço</h4>
-              <p>Itapema, Santa Catarina, Brasil<br />CEP: 88220-000</p>
+              <p>Rua das Flores, 123 — Centro<br />Itapema, SC — 88220-000</p>
             </div>
           </div>
 
-          <div class="info-card">
-            <div class="info-card__icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="localizacao__info-item">
+            <div class="localizacao__info-icon"><i class="fas fa-phone-alt"></i></div>
             <div>
               <h4>Telefone / WhatsApp</h4>
-              <p><a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia." target="_blank">(47) 99999-9999</a></p>
+              <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia." target="_blank" rel="noopener">(47) 9 9999-9999</a>
             </div>
           </div>
 
-          <div class="info-card">
-            <div class="info-card__icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="localizacao__info-item">
+            <div class="localizacao__info-icon"><i class="fas fa-envelope"></i></div>
             <div>
               <h4>E-mail</h4>
-              <p><a href="mailto:contato@consulabodontologia.com.br">contato@consulabodontologia.com.br</a></p>
+              <a href="mailto:contato@consulab.com.br">contato@consulab.com.br</a>
             </div>
           </div>
 
-          <div class="info-card">
-            <div class="info-card__icon"><i class="fa-solid fa-clock"></i></div>
+          <div class="localizacao__info-item">
+            <div class="localizacao__info-icon"><i class="fas fa-clock"></i></div>
             <div>
-              <h4>Horários de Atendimento</h4>
-              <div class="horarios">
-                <div class="horario-row">
-                  <span>Segunda a Sexta</span>
-                  <span>08:00 — 20:00</span>
-                </div>
-                <div class="horario-row">
-                  <span>Sábado</span>
-                  <span>08:00 — 14:00</span>
-                </div>
-                <div class="horario-row">
-                  <span>Domingo</span>
-                  <span class="fechado">Fechado</span>
-                </div>
-              </div>
+              <h4>Horário de Atendimento</h4>
+              <p>Segunda a Sexta: 8h — 18h<br />Sábado: 8h — 12h</p>
             </div>
           </div>
 
+          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia."
+             target="_blank" rel="noopener" class="btn btn--primary localizacao__cta">
+            <i class="fab fa-whatsapp"></i> Agendar pelo WhatsApp
+          </a>
         </div>
 
         <div class="localizacao__map animate-on-scroll">
-          <div class="map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57247.82734821682!2d-48.63!3d-27.09!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8ebb3d8e0b1c7%3A0x9b123e41b4e9a123!2sItapema%2C%20SC!5e0!3m2!1spt-BR!2sbr!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" title="Localização ConsuLab Odontologia em Itapema SC"></iframe>
-          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57247.82734821682!2d-48.63!3d-27.09!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8ebb3d8e0b1c7%3A0x9b123e41b4e9a123!2sItapema%2C%20SC!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+            width="100%"
+            height="400"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            title="Localização ConsuLab Odontologia — Itapema, SC">
+          </iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== CONTATO ========== -->
+  <!-- ===== CONTATO ===== -->
   <section class="section contato" id="contato">
     <div class="container">
-      <div class="section-header animate-on-scroll">
-        <span class="section-label">Fale conosco</span>
-        <h2 class="section-title">Entre em <span class="text-primary">Contato</span></h2>
-        <p class="section-subtitle">Preencha o formulário abaixo ou nos chame pelo WhatsApp. Responderemos o mais breve possível!</p>
+      <div class="section__header animate-on-scroll">
+        <span class="section__tag">Fale Conosco</span>
+        <h2 class="section__title">Entre em Contato</h2>
+        <p class="section__subtitle">Preencha o formulário abaixo e entraremos em contato em breve. Ou fale conosco diretamente pelo WhatsApp!</p>
       </div>
 
-      <div class="contato__grid">
-        <div class="contato__form-wrapper animate-on-scroll">
-          <form class="contact-form" id="contactForm" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="nome">Nome completo <span>*</span></label>
-                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
-                <span class="form-error" id="nomeError"></span>
-              </div>
-              <div class="form-group">
-                <label for="email">E-mail <span>*</span></label>
-                <input type="email" id="email" name="email" placeholder="seu@email.com" required />
-                <span class="form-error" id="emailError"></span>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="telefone">Telefone / WhatsApp <span>*</span></label>
-                <input type="tel" id="telefone" name="telefone" placeholder="(47) 99999-9999" required />
-                <span class="form-error" id="telefoneError"></span>
-              </div>
-              <div class="form-group">
-                <label for="servico">Serviço de interesse</label>
-                <select id="servico" name="servico">
-                  <option value="">Selecione um serviço</option>
-                  <option value="clareamento">Clareamento Dental</option>
-                  <option value="implantes">Implantes Dentários</option>
-                  <option value="ortodontia">Ortodontia / Aparelho</option>
-                  <option value="dentistica">Dentística</option>
-                  <option value="periodontia">Periodontia</option>
-                  <option value="protese">Prótese Dentária</option>
-                  <option value="endodontia">Endodontia</option>
-                  <option value="odontopediatria">Odontopediatria</option>
-                  <option value="outro">Outro</option>
-                </select>
-              </div>
+      <div class="contato__wrapper animate-on-scroll">
+        <form class="contato__form" id="contatoForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Nome completo <span class="required" aria-hidden="true">*</span></label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" />
+              <span class="form-error" id="nomeError" role="alert"></span>
             </div>
             <div class="form-group">
-              <label for="mensagem">Mensagem <span>*</span></label>
-              <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos ajudá-lo? Descreva brevemente sua necessidade..." required></textarea>
-              <span class="form-error" id="mensagemError"></span>
+              <label for="email">E-mail <span class="required" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" />
+              <span class="form-error" id="emailError" role="alert"></span>
             </div>
-            <div class="form-feedback" id="formFeedback"></div>
-            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
-              <i class="fa-solid fa-paper-plane"></i> Enviar mensagem
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="telefone">Telefone <span class="required" aria-hidden="true">*</span></label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(47) 9 9999-9999" autocomplete="tel" />
+              <span class="form-error" id="telefoneError" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="servico">Serviço de interesse <span class="required" aria-hidden="true">*</span></label>
+              <select id="servico" name="servico">
+                <option value="">Selecione um serviço...</option>
+                <option value="clareamento">Clareamento Dental</option>
+                <option value="implantes">Implantes</option>
+                <option value="ortodontia">Ortodontia / Aparelho</option>
+                <option value="dentistica">Dentística</option>
+                <option value="periodontia">Periodontia</option>
+                <option value="protese">Prótese Dentária</option>
+                <option value="endodontia">Endodontia</option>
+                <option value="odontopediatria">Odontopediatria</option>
+              </select>
+              <span class="form-error" id="servicoError" role="alert"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Mensagem <span class="required" aria-hidden="true">*</span></label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem ou dúvida..."></textarea>
+            <span class="form-error" id="mensagemError" role="alert"></span>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary btn--lg" id="submitBtn">
+              <i class="fas fa-paper-plane"></i> Enviar Mensagem
             </button>
-          </form>
-        </div>
+            <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia."
+               target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg">
+              <i class="fab fa-whatsapp"></i> WhatsApp Direto
+            </a>
+          </div>
+        </form>
 
-        <div class="contato__aside animate-on-scroll">
-          <div class="contato__whatsapp-card">
-            <div class="wa-card__icon"><i class="fa-brands fa-whatsapp"></i></div>
-            <h3>Prefere o WhatsApp?</h3>
-            <p>Fale diretamente com nossa equipe pelo WhatsApp. Atendemos de segunda a sábado!</p>
-            <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia." target="_blank" rel="noopener" class="btn btn--whatsapp btn--full btn--lg">
-              <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
-            </a>
-          </div>
-          <div class="contato__social-card">
-            <h4>Siga-nos nas redes</h4>
-            <p>Acompanhe nosso trabalho, dicas de saúde bucal e novidades!</p>
-            <a href="https://www.instagram.com/consulab.odontologia" target="_blank" rel="noopener" class="social-link social-link--instagram">
-              <i class="fa-brands fa-instagram"></i> @consulab.odontologia
-            </a>
-          </div>
+        <div class="contato__success" id="contatoSuccess" aria-live="polite" hidden>
+          <div class="contato__success-icon"><i class="fas fa-check-circle"></i></div>
+          <h3>Mensagem enviada com sucesso!</h3>
+          <p>Obrigado pelo contato! Nossa equipe retornará em breve. Enquanto isso, você também pode falar conosco diretamente pelo WhatsApp.</p>
+          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia."
+             target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg">
+            <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <div class="footer__top">
-      <div class="container footer__top-inner">
+    <div class="container">
+      <div class="footer__grid">
 
         <div class="footer__brand">
-          <a href="#inicio" class="footer__logo">
-            <span class="logo-icon"><i class="fa-solid fa-tooth"></i></span>
-            <span class="logo-text">ConsuLab <strong>Odontologia</strong></span>
+          <a href="#inicio" class="navbar__logo footer__logo">
+            <i class="fas fa-tooth navbar__logo-icon"></i>
+            <span>ConsuLab <strong>Odontologia</strong></span>
           </a>
-          <p class="footer__tagline">Cuidando do seu sorriso com excelência e tecnologia em Itapema, SC.</p>
+          <p class="footer__tagline">Cuidando do seu sorriso com excelência e dedicação em Itapema, SC.</p>
           <div class="footer__social">
-            <a href="https://www.instagram.com/consulab.odontologia" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
-              <i class="fa-brands fa-instagram"></i>
+            <a href="https://instagram.com/consulab.odontologia" target="_blank" rel="noopener" aria-label="Instagram ConsuLab Odontologia">
+              <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia." target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon">
-              <i class="fa-brands fa-whatsapp"></i>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook ConsuLab Odontologia">
+              <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="mailto:contato@consulabodontologia.com.br" aria-label="E-mail" class="social-icon">
-              <i class="fa-solid fa-envelope"></i>
+            <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia." target="_blank" rel="noopener" aria-label="WhatsApp ConsuLab Odontologia">
+              <i class="fab fa-whatsapp"></i>
             </a>
           </div>
         </div>
 
         <div class="footer__links">
-          <h4>Links Rápidos</h4>
+          <h4>Navegação</h4>
           <ul>
-            <li><a href="#inicio"><i class="fa-solid fa-chevron-right"></i> Início</a></li>
-            <li><a href="#sobre"><i class="fa-solid fa-chevron-right"></i> Sobre nós</a></li>
-            <li><a href="#servicos"><i class="fa-solid fa-chevron-right"></i> Serviços</a></li>
-            <li><a href="#diferenciais"><i class="fa-solid fa-chevron-right"></i> Diferenciais</a></li>
-            <li><a href="#depoimentos"><i class="fa-solid fa-chevron-right"></i> Depoimentos</a></li>
-            <li><a href="#contato"><i class="fa-solid fa-chevron-right"></i> Contato</a></li>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
           </ul>
         </div>
 
-        <div class="footer__services">
-          <h4>Nossos Serviços</h4>
+        <div class="footer__links">
+          <h4>Serviços</h4>
           <ul>
-            <li><a href="#servicos"><i class="fa-solid fa-chevron-right"></i> Clareamento Dental</a></li>
-            <li><a href="#servicos"><i class="fa-solid fa-chevron-right"></i> Implantes</a></li>
-            <li><a href="#servicos"><i class="fa-solid fa-chevron-right"></i> Ortodontia</a></li>
-            <li><a href="#servicos"><i class="fa-solid fa-chevron-right"></i> Dentística</a></li>
-            <li><a href="#servicos"><i class="fa-solid fa-chevron-right"></i> Periodontia</a></li>
-            <li><a href="#servicos"><i class="fa-solid fa-chevron-right"></i> Endodontia</a></li>
+            <li><a href="#servicos">Clareamento Dental</a></li>
+            <li><a href="#servicos">Implantes</a></li>
+            <li><a href="#servicos">Ortodontia</a></li>
+            <li><a href="#servicos">Dentística</a></li>
+            <li><a href="#servicos">Periodontia</a></li>
+            <li><a href="#servicos">Odontopediatria</a></li>
           </ul>
         </div>
 
         <div class="footer__contact">
           <h4>Contato</h4>
-          <ul class="contact-info-list">
-            <li>
-              <i class="fa-solid fa-location-dot"></i>
-              <span>Itapema, SC — Brasil</span>
-            </li>
-            <li>
-              <i class="fa-brands fa-whatsapp"></i>
-              <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia." target="_blank">(47) 99999-9999</a>
-            </li>
-            <li>
-              <i class="fa-solid fa-envelope"></i>
-              <a href="mailto:contato@consulabodontologia.com.br">contato@consulabodontologia.com.br</a>
-            </li>
-            <li>
-              <i class="fa-brands fa-instagram"></i>
-              <a href="https://www.instagram.com/consulab.odontologia" target="_blank">@consulab.odontologia</a>
-            </li>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Rua das Flores, 123 — Centro, Itapema, SC</li>
+            <li><i class="fas fa-phone-alt"></i> <a href="tel:+5547999999999">(47) 9 9999-9999</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@consulab.com.br">contato@consulab.com.br</a></li>
+            <li><i class="fab fa-instagram"></i> <a href="https://instagram.com/consulab.odontologia" target="_blank" rel="noopener">@consulab.odontologia</a></li>
           </ul>
         </div>
 
       </div>
-    </div>
 
-    <div class="footer__bottom">
-      <div class="container footer__bottom-inner">
-        <p>&copy; <span id="currentYear"></span> ConsuLab Odontologia. Todos os direitos reservados.</p>
-        <p>Desenvolvido com <i class="fa-solid fa-heart" style="color:#e53935;"></i> para sorrisos mais bonitos</p>
+      <div class="footer__bottom">
+        <p>&copy; 2024 ConsuLab Odontologia. Todos os direitos reservados.</p>
+        <p>Desenvolvido com <i class="fas fa-heart" style="color:#e53935;" aria-hidden="true"></i> em Itapema, SC</p>
       </div>
     </div>
   </footer>
 
-  <!-- ========== FLOATING WHATSAPP ========== -->
-  <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Falar pelo WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-    <span class="floating-whatsapp__tooltip">Falar pelo WhatsApp</span>
+  <!-- ===== FLOATING WHATSAPP ===== -->
+  <a href="https://wa.me/5547999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20ConsuLab%20Odontologia."
+     target="_blank" rel="noopener" class="whatsapp-float" aria-label="Falar no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-float__tooltip">Fale pelo WhatsApp!</span>
   </a>
 
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
