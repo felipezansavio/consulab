@@ -257,7 +257,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 .navbar__logo strong { color: var(--primary); }
 
 .navbar__logo-img {
-  height: 120px;
+  height: 150px;
   width: auto;
   object-fit: contain;
   display: block;
