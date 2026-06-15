@@ -256,13 +256,15 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 
 .navbar__logo strong { color: var(--primary); }
 
-.navbar__logo-icon {
-  font-size: 1.4rem;
-  color: var(--primary-light);
-  transition: color var(--transition);
+.navbar__logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: opacity var(--transition);
 }
 
-.navbar.scrolled .navbar__logo-icon { color: var(--primary); }
+.navbar__logo-img:hover { opacity: 0.85; }
 
 /* Nav */
 .nav {
