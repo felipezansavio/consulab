@@ -1388,7 +1388,9 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   font-size: 0.82rem;
   color: rgba(255,255,255,.9);
   text-align: center;
-  background: var(--primary);
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-dark);
   width: 100vw;
   position: relative;
   left: 50%;
@@ -1401,11 +1403,11 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 
 @media (min-width: 600px) {
   .footer__grid { grid-template-columns: repeat(2, 1fr); }
-  .footer__bottom { flex-direction: row; justify-content: space-between; }
+  .footer__bottom { flex-direction: row; justify-content: center; }
 }
 
 @media (min-width: 1024px) {
-  .footer__grid { grid-template-columns: 1.5fr 1fr 1fr 1.4fr; }
+  .footer__grid { grid-template-columns: 2fr 1fr 1fr 1.4fr; }
 }
 
 /* ============================================================
