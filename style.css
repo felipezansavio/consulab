@@ -1292,13 +1292,13 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   margin-bottom: 14px;
   display: block;
   padding: 0;
+  text-align: left;
 }
 
 .footer__logo .navbar__logo-img {
   margin: 0;
   padding: 0;
   max-width: 100%;
-  object-position: left center;
 }
 
 .footer__logo .navbar__logo-icon,
@@ -1310,7 +1310,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   line-height: 1.7;
   color: rgba(255,255,255,.6);
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
   max-width: 260px;
 }
 
