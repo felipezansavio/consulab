@@ -1290,6 +1290,15 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 
 .footer__logo {
   margin-bottom: 14px;
+  display: block;
+  padding: 0;
+}
+
+.footer__logo .navbar__logo-img {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  object-position: left center;
 }
 
 .footer__logo .navbar__logo-icon,
