@@ -231,15 +231,6 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   -webkit-backdrop-filter: blur(10px);
 }
 
-/* Logo oculta no topo, visível ao rolar */
-.navbar__logo-img {
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
-.navbar.scrolled .navbar__logo-img {
-  opacity: 1;
-}
 
 .navbar__inner {
   display: flex;
