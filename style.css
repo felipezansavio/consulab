@@ -231,6 +231,16 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   -webkit-backdrop-filter: blur(10px);
 }
 
+/* Logo oculta no topo, visível ao rolar */
+.navbar__logo-img {
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.navbar.scrolled .navbar__logo-img {
+  opacity: 1;
+}
+
 .navbar__inner {
   display: flex;
   align-items: center;
@@ -261,15 +271,12 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   width: auto;
   object-fit: contain;
   display: block;
-  mix-blend-mode: screen;
   transition: opacity var(--transition);
 }
 
-.navbar__logo-img:hover { opacity: 0.85; }
-
-/* No footer também */
+/* No footer sempre visível */
 .footer__logo .navbar__logo-img {
-  mix-blend-mode: screen;
+  opacity: 1 !important;
 }
 
 /* Nav */
