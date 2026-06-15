@@ -1384,10 +1384,19 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 24px 0;
+  padding: 20px 0;
   font-size: 0.82rem;
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,.9);
   text-align: center;
+  background: var(--primary);
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media (min-width: 600px) {
