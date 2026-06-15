@@ -1311,7 +1311,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   color: rgba(255,255,255,.6);
   margin-bottom: 20px;
   text-align: center;
-  max-width: 260px;
+  max-width: 100%;
 }
 
 .footer__social {
