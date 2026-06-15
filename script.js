@@ -1,3 +1,6 @@
+window.history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---- NAVBAR: scroll ---- */
