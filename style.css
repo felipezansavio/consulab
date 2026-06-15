@@ -265,13 +265,9 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   transition: opacity var(--transition);
 }
 
-/* No footer sempre visível com destaque */
+/* No footer sempre visível */
 .footer__logo .navbar__logo-img {
   opacity: 1 !important;
-  background: rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 12px 20px;
-  box-shadow: 0 0 30px rgba(79,195,247,0.2), 0 0 0 1px rgba(255,255,255,0.08);
 }
 
 /* Nav */
