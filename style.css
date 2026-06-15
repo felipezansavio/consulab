@@ -1290,9 +1290,9 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 
 .footer__logo {
   margin-bottom: 14px;
-  display: block;
+  display: flex;
+  justify-content: center;
   padding: 0;
-  text-align: left;
 }
 
 .footer__logo .navbar__logo-img {
@@ -1310,13 +1310,14 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   line-height: 1.7;
   color: rgba(255,255,255,.6);
   margin-bottom: 20px;
-  text-align: left;
+  text-align: center;
   max-width: 260px;
 }
 
 .footer__social {
   display: flex;
   gap: 12px;
+  justify-content: center;
 }
 
 .footer__social a {
