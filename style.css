@@ -1275,8 +1275,8 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
    FOOTER
    ============================================================ */
 .footer {
-  background: var(--gray-800);
-  color: rgba(255,255,255,0.75);
+  background: linear-gradient(135deg, #0d47a1 0%, #1a73e8 50%, #4fc3f7 100%);
+  color: rgba(255,255,255,0.85);
   padding: 60px 0 0;
 }
 
