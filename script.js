@@ -1,230 +1,188 @@
-/* ===========================
-   CONSULAB ODONTOLOGIA — JS
-   =========================== */
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ---- NAVBAR: scroll behavior ---- */
-  const navbar = document.getElementById('navbar');
-  const navLinks = document.querySelectorAll('.nav-link');
+  /* ---- NAVBAR: scroll ---- */
+  const navbar   = document.getElementById('navbar');
+  const navLinks = document.querySelectorAll('.nav__link');
   const sections = document.querySelectorAll('section[id]');
 
   function onScroll() {
-    if (window.scrollY > 60) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-    highlightActiveLink();
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    highlightActive();
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---- NAVBAR: active link on scroll ---- */
-  function highlightActiveLink() {
-    const scrollPos = window.scrollY + 120;
-    sections.forEach(section => {
-      const top    = section.offsetTop;
-      const bottom = top + section.offsetHeight;
-      if (scrollPos >= top && scrollPos < bottom) {
+  function highlightActive() {
+    const pos = window.scrollY + (navbar.offsetHeight + 24);
+    sections.forEach(sec => {
+      if (pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight) {
         navLinks.forEach(l => l.classList.remove('active'));
-        const active = document.querySelector(`.nav-link[href="#${section.id}"]`);
-        if (active) active.classList.add('active');
+        const a = document.querySelector(`.nav__link[href="#${sec.id}"]`);
+        if (a) a.classList.add('active');
       }
     });
   }
 
   /* ---- HAMBURGER ---- */
   const hamburger = document.getElementById('hamburger');
-  const navMenu   = document.getElementById('navMenu');
+  const nav       = document.getElementById('nav');
 
   hamburger.addEventListener('click', () => {
-    const isOpen = navMenu.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-    hamburger.setAttribute('aria-expanded', String(isOpen));
+    const open = nav.classList.toggle('active');
+    hamburger.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', String(open));
   });
 
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
-      navMenu.classList.remove('open');
-      hamburger.classList.remove('open');
+      nav.classList.remove('active');
+      hamburger.classList.remove('active');
       hamburger.setAttribute('aria-expanded', 'false');
     });
   });
 
-  /* ---- SMOOTH SCROLL (for browsers without native support) ---- */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        const offset = navbar.offsetHeight + 16;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
+  /* ---- SMOOTH SCROLL ---- */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - navbar.offsetHeight - 8;
+      window.scrollTo({ top, behavior: 'smooth' });
     });
   });
 
   /* ---- SCROLL ANIMATIONS ---- */
-  const animatedEls = document.querySelectorAll('.animate-on-scroll');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((entry, i) => {
+  const animEls = document.querySelectorAll('.animate-on-scroll');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, i * 80);
-        observer.unobserve(entry.target);
+        entry.target.classList.add('animated');
+        io.unobserve(entry.target);
       }
     });
   }, { threshold: 0.12 });
+  animEls.forEach(el => io.observe(el));
 
-  animatedEls.forEach(el => observer.observe(el));
-
-  /* ---- COUNTER ANIMATION ---- */
+  /* ---- COUNTERS ---- */
   const counters = document.querySelectorAll('.counter');
-  const counterObserver = new IntersectionObserver(entries => {
+  const counterIO = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        counterObserver.unobserve(entry.target);
+        runCounter(entry.target);
+        counterIO.unobserve(entry.target);
       }
     });
   }, { threshold: 0.5 });
+  counters.forEach(c => counterIO.observe(c));
 
-  counters.forEach(counter => counterObserver.observe(counter));
-
-  function animateCounter(el) {
-    const target   = parseInt(el.getAttribute('data-target'), 10);
+  function runCounter(el) {
+    const target = parseInt(el.dataset.target, 10);
     const duration = 1800;
-    const step     = 16;
-    const increment = target / (duration / step);
-    let current = 0;
-
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        el.textContent = target;
-        clearInterval(timer);
-      } else {
-        el.textContent = Math.floor(current);
-      }
+    const step = 16;
+    const inc = target / (duration / step);
+    let cur = 0;
+    const t = setInterval(() => {
+      cur += inc;
+      if (cur >= target) { el.textContent = target; clearInterval(t); }
+      else { el.textContent = Math.floor(cur); }
     }, step);
   }
 
   /* ---- TESTIMONIALS SLIDER ---- */
-  const slides = document.querySelectorAll('.testimonial-slide');
-  const dots   = document.querySelectorAll('.dot');
-  let current  = 0;
-  let autoInterval;
+  const slides   = document.querySelectorAll('.testimonial-card');
+  const dotsWrap = document.getElementById('testimonialsDots');
+  let current    = 0;
+  let auto;
 
-  function goToSlide(index) {
+  // Build dots
+  if (dotsWrap && slides.length) {
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'testimonials__dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Depoimento ${i + 1}`);
+      dot.addEventListener('click', () => { goTo(i); resetAuto(); });
+      dotsWrap.appendChild(dot);
+    });
+  }
+
+  function getDots() { return document.querySelectorAll('.testimonials__dot'); }
+
+  function goTo(index) {
     slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
+    getDots()[current]?.classList.remove('active');
     current = (index + slides.length) % slides.length;
     slides[current].classList.add('active');
-    dots[current].classList.add('active');
+    getDots()[current]?.classList.add('active');
   }
 
-  function startAuto() {
-    autoInterval = setInterval(() => goToSlide(current + 1), 5000);
-  }
+  function startAuto() { auto = setInterval(() => goTo(current + 1), 5000); }
+  function resetAuto()  { clearInterval(auto); startAuto(); }
 
-  function resetAuto() {
-    clearInterval(autoInterval);
-    startAuto();
-  }
-
-  document.getElementById('nextBtn').addEventListener('click', () => { goToSlide(current + 1); resetAuto(); });
-  document.getElementById('prevBtn').addEventListener('click', () => { goToSlide(current - 1); resetAuto(); });
-
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => { goToSlide(parseInt(dot.dataset.index, 10)); resetAuto(); });
-  });
-
+  document.getElementById('prevBtn')?.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+  document.getElementById('nextBtn')?.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
   startAuto();
 
-  /* ---- CONTACT FORM VALIDATION ---- */
-  const form        = document.getElementById('contactForm');
-  const submitBtn   = document.getElementById('submitBtn');
-  const formFeedback = document.getElementById('formFeedback');
+  /* ---- CONTACT FORM ---- */
+  const form      = document.getElementById('contatoForm');
+  const submitBtn = document.getElementById('submitBtn');
 
-  function validateField(id, errorId, check, message) {
-    const input = document.getElementById(id);
-    const error = document.getElementById(errorId);
-    if (!check(input.value.trim())) {
-      input.classList.add('error');
-      error.textContent = message;
+  function fieldError(inputId, errorId, ok, msg) {
+    const el  = document.getElementById(inputId);
+    const err = document.getElementById(errorId);
+    if (!el) return true;
+    if (!ok(el.value.trim())) {
+      el.classList.add('error');
+      if (err) err.textContent = msg;
       return false;
     }
-    input.classList.remove('error');
-    error.textContent = '';
+    el.classList.remove('error');
+    if (err) err.textContent = '';
     return true;
   }
 
-  function clearErrors() {
-    document.querySelectorAll('.form-group input, .form-group textarea').forEach(el => {
-      el.classList.remove('error');
-    });
-    document.querySelectorAll('.form-error').forEach(el => { el.textContent = ''; });
-    formFeedback.className = 'form-feedback';
-    formFeedback.textContent = '';
-  }
-
-  form.addEventListener('submit', e => {
+  form?.addEventListener('submit', e => {
     e.preventDefault();
-    clearErrors();
 
-    const nome      = document.getElementById('nome').value.trim();
-    const email     = document.getElementById('email').value.trim();
-    const telefone  = document.getElementById('telefone').value.trim();
-    const mensagem  = document.getElementById('mensagem').value.trim();
-    const servico   = document.getElementById('servico').value;
+    const v1 = fieldError('nome',     'nomeError',     v => v.length >= 3,                              'Informe seu nome completo.');
+    const v2 = fieldError('email',    'emailError',    v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),      'Informe um e-mail válido.');
+    const v3 = fieldError('telefone', 'telefoneError', v => v.replace(/\D/,'').length >= 10,            'Informe um telefone válido.');
+    const v4 = fieldError('mensagem', 'mensagemError', v => v.length >= 10,                             'Mensagem muito curta.');
+    if (!v1 || !v2 || !v3 || !v4) return;
 
-    let valid = true;
-
-    if (!validateField('nome', 'nomeError', v => v.length >= 3, 'Por favor, informe seu nome completo.')) valid = false;
-    if (!validateField('email', 'emailError', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), 'Informe um e-mail válido.')) valid = false;
-    if (!validateField('telefone', 'telefoneError', v => v.replace(/\D/g,'').length >= 10, 'Informe um telefone válido.')) valid = false;
-    if (!validateField('mensagem', 'mensagemError', v => v.length >= 10, 'Sua mensagem deve ter pelo menos 10 caracteres.')) valid = false;
-
-    if (!valid) return;
-
-    /* Simulate send & redirect to WhatsApp */
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Enviando...';
+    submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Enviando...';
 
     setTimeout(() => {
-      const servicoText = servico ? ` — Serviço: ${document.getElementById('servico').options[document.getElementById('servico').selectedIndex].text}` : '';
-      const msg = encodeURIComponent(
-        `Olá! Meu nome é ${nome}.${servicoText}\n\n${mensagem}\n\nTelefone: ${telefone}\nE-mail: ${email}`
-      );
-      window.open(`https://wa.me/5547999999999?text=${msg}`, '_blank');
+      const nome     = document.getElementById('nome').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      const email    = document.getElementById('email').value.trim();
+      const servico  = (() => { const s = document.getElementById('servico'); return s?.options[s.selectedIndex]?.text || ''; })();
+      const mensagem = document.getElementById('mensagem').value.trim();
 
-      formFeedback.textContent = '✅ Mensagem enviada! Você será redirecionado para o WhatsApp.';
-      formFeedback.className = 'form-feedback success';
+      const txt = encodeURIComponent(
+        `Olá! Me chamo ${nome}.${servico && servico !== 'Selecione um serviço' ? ` Tenho interesse em: ${servico}.` : ''}\n\n${mensagem}\n\nTelefone: ${telefone}\nE-mail: ${email}`
+      );
+      window.open(`https://wa.me/5547999999999?text=${txt}`, '_blank');
+
       form.reset();
       submitBtn.disabled = false;
-      submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
-    }, 1200);
+      submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar mensagem';
+    }, 1000);
   });
 
-  /* Live phone mask */
-  const phoneInput = document.getElementById('telefone');
-  phoneInput.addEventListener('input', () => {
-    let v = phoneInput.value.replace(/\D/g, '').substring(0, 11);
-    if (v.length > 6) {
-      v = `(${v.substring(0,2)}) ${v.substring(2,7)}-${v.substring(7)}`;
-    } else if (v.length > 2) {
-      v = `(${v.substring(0,2)}) ${v.substring(2)}`;
-    } else if (v.length > 0) {
-      v = `(${v}`;
-    }
-    phoneInput.value = v;
+  /* Phone mask */
+  document.getElementById('telefone')?.addEventListener('input', function () {
+    let v = this.value.replace(/\D/g, '').substring(0, 11);
+    if (v.length > 7)      v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+    else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+    else if (v.length)     v = `(${v}`;
+    this.value = v;
   });
 
   /* ---- FOOTER YEAR ---- */
-  const yearEl = document.getElementById('currentYear');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  const yr = document.getElementById('currentYear');
+  if (yr) yr.textContent = new Date().getFullYear();
 
 });
