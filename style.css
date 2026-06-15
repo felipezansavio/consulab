@@ -440,17 +440,19 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 
 .hero__image-frame {
   position: relative;
-  border-radius: 40% 60% 60% 40% / 50% 50% 60% 40%;
+  border-radius: 50% 50% 48% 52% / 30% 30% 70% 70%;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0,0,0,.35);
   border: 4px solid rgba(255,255,255,.25);
   background: rgba(255,255,255,.08);
+  aspect-ratio: 3 / 4;
 }
 
 .hero__image-frame img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center top;
   display: block;
 }
 
