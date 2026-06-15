@@ -435,7 +435,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 /* Hero image */
 .hero__image {
   flex-shrink: 0;
-  width: 380px;
+  width: 440px;
 }
 
 .hero__image-frame {
@@ -444,15 +444,13 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0,0,0,.35);
   border: 4px solid rgba(255,255,255,.25);
-  aspect-ratio: 1 / 1;
   background: rgba(255,255,255,.08);
 }
 
 .hero__image-frame img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
   display: block;
 }
 
